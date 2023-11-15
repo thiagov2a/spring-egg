@@ -1,8 +1,8 @@
-<h4 align="center">
+<h4>
   🥚 EGG
 </h4>
 
-<h1 align="center">
+<h1>
 🌱 SpringBoot
 </h1>
 
