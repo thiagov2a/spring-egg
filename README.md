@@ -1,9 +1,9 @@
-<h4>
+<h4 aling="center">
   🥚 EGG
 </h4>
 
-<h1>
+<h1 aling="center">
 🌱 SpringBoot
 </h1>
 
-💾 Ejercicios Prácticos sobre SpringBoot del Curso de EGG
+📚 Ejercicios Prácticos del Curso de EGG sobre el Framework de Java, Spring Boot y Thymeleaf
