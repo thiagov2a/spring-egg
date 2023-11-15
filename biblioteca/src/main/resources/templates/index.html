@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  </head>
+  <body>
+    <div th:replace="~{/fragments/header.html :: div}"></div>
+
+    <div th:replace="~{/fragments/success.html :: div}"></div>
+
+    <div class="container">
+      <main>
+        <div class="px-4 py-5 my-5 text-center">
+          <img class="d-block mx-auto" src="/img/biblioteca-de-diseno-web.png" alt="biblioteca" width="100" />
+          <h1 class="display-5 fw-bold text-body-emphasis">¡Bienvenido a la Biblioteca!</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, vel illo maxime repudiandae ipsam
+              accusamus dicta magni impedit explicabo praesentium aliquid cumque aperiam laudantium tenetur! Quaerat
+              quibusdam facilis hic dolor!
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" th:if="${session.usuariosession == null}">
+              <a href="/registrar" class="btn btn-primary btn-lg 4 px-4 gap-3">
+                <i class="bi bi-person-add"></i>
+                Registrarse
+              </a>
+              <a href="/login" class="btn btn-outline-secondary btn-lg px-4">
+                <i class="bi bi-box-arrow-in-right"></i>
+                Iniciar sesión
+              </a>
+            </div>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" th:if="${session.usuariosession != null}">
+              <a href="/libro/listar" class="btn btn-primary btn-lg 4 px-4 gap-3">
+                <i class="bi bi-journals"></i>
+                Ver listado
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div th:replace="~{fragments/footer.html :: div}"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
+

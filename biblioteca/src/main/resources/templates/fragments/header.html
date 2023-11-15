@@ -1,0 +1,108 @@
+<div class="container">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <i class="bi bi-book fs-1 me-2"></i>
+      <h1 class="ms-2">Biblioteca</h1>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item" th:if="${session.usuariosession != null}">
+        <a href="/" class="nav-link active" aria-current="page">
+          <i class="bi bi-house"></i>
+          Inicio
+        </a>
+      </li>
+      <li class="nav-item dropdown" th:if="${session.usuariosession != null}">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="libroDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <i class="bi bi-journal"></i>
+          Libro
+        </a>
+        <div class="dropdown-menu" aria-labelledby="libroDropdown">
+          <a class="dropdown-item" href="/libro/listar">
+            <i class="bi bi-journals"></i>
+            Listar
+          </a>
+          <hr class="dropdown-divider" sec:authorize="hasRole('ADMIN')" />
+          <a class="dropdown-item" href="/libro/registrar" sec:authorize="hasRole('ADMIN')">
+            <i class="bi bi-journal-plus"></i>
+            Registrar
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" th:if="${session.usuariosession != null}">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="autorDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <i class="bi bi-person-fill"></i>
+          Autor
+        </a>
+        <div class="dropdown-menu" aria-labelledby="autorDropdown">
+          <a class="dropdown-item" href="/autor/listar">
+            <i class="bi bi-people-fill"></i>
+            Listar
+          </a>
+          <hr class="dropdown-divider" sec:authorize="hasRole('ADMIN')" />
+          <a class="dropdown-item" href="/autor/registrar" sec:authorize="hasRole('ADMIN')">
+            <i class="bi bi-person-fill-add"></i>
+            Registrar
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" th:if="${session.usuariosession != null}">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="editorialDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <i class="bi bi-bookmark-fill"></i>
+          Editorial
+        </a>
+        <div class="dropdown-menu" aria-labelledby="editorialDropdown">
+          <a class="dropdown-item" href="/editorial/listar">
+            <i class="bi bi-bookmarks-fill"></i>
+            Listar
+          </a>
+          <hr class="dropdown-divider" sec:authorize="hasRole('ADMIN')" />
+          <a class="dropdown-item" href="/editorial/registrar" sec:authorize="hasRole('ADMIN')">
+            <i class="bi bi-bookmark-plus-fill"></i>
+            Registrar
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" th:if="${session.usuariosession != null}">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="editorialDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <i class="bi bi-person-circle"></i>
+          Perfil
+        </a>
+        <div class="dropdown-menu" aria-labelledby="editorialDropdown">
+          <a class="dropdown-item" href="/logout">
+            <i class="bi bi-box-arrow-in-left"></i>
+            Cerrar sesión
+          </a>
+        </div>
+      </li>
+    </ul>
+  </header>
+</div>

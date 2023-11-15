@@ -1,0 +1,9 @@
+<div class="container">
+  <section>
+    <div th:if="${exito != null}" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>¡Exito!</strong>
+      <span th:text="${exito}"></span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </section>
+</div>
